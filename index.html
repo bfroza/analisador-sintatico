@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador Sintático LL(1)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Analisador Sintático LL(1)</h1>
+
+    <div class="container">
+
+        <!-- Seção principal -->
+        <div class="main">
+            <section>
+                <h2>Gramática</h2>
+                <pre id="grammar"></pre>
+            </section>
+
+            <section>
+                <div class="first-follow-grid">
+                    <pre id="firstSet"></pre>
+                    <pre id="followSet"></pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>Tabela de Parsing</h2>
+                <div id="parsingTable"></div>
+            </section>
+
+            <section>
+                <h2>Analisar Sentença</h2>
+                <input type="text" id="inputSentence" placeholder="Digite uma sentença (ex: aca)">
+                <button onclick="gerarSentenca()">Gerar Sentença</button>
+                <button onclick="analisar()">Analisar</button>
+                <button onclick="iniciarPasso()">Passo a Passo</button>
+                <button onclick="proximoPasso()" id="btnProximoPasso" disabled>Próximo</button>
+                <br><br>
+                <label for="inputLimite">Limite antes de forçar encerramento da sentença automática:</label>
+                <input type="number" id="inputLimite" value="10" min="1" style="width: 60px;">
+                <p id="resultado"></p>
+                <p id="resultadoSequencia"></p>
+            </section>
+
+        </div>
+
+        <!-- Seção lateral -->
+        <div class="sidebar">
+            <h2>Traço da Pilha</h2>
+            <table id="traceTable">
+                <thead>
+                    <tr>
+                        <th>Pilha</th>
+                        <th>Entrada</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iterações serão inseridas aqui -->
+                </tbody>
+            </table>
+            <p id="resultado2"></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
